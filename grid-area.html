@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area LayOut</title>
+    <style>
+        .header,.nav,.main,.sidebar,.addvartise,.footer{
+            background-color: darkgoldenrod;
+            border: 2px solid red;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            margin-left: 20px;
+        }
+        .header{
+            grid-area: header;
+        }
+        .nav{
+            grid-area: nav;
+        }
+        .main{
+            grid-area: main;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+        .addvartise{
+            grid-area: addvartise;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .container{
+            display: grid;
+            gap: 20px;
+            grid-template-areas: 
+            "header    header   header  header "
+            "nav       main     main    sidebar"
+            "nav       main     main    addvartise"
+            "footer    footer   footer  footer"
+            ;
+        }
+        /* Media Quary */
+        @media screen and (max-width:576px) {
+            .container{
+                grid-template-areas: 
+                "header" "nav" "main" "sidebar" "addvartise" "footer"
+                ;
+            }
+        }
+        /* Medium screen */
+        @media screen and (min-width:576px) and (max-width:992px) {
+            .container{
+                grid-template-areas: 
+                "header    header   header"
+                "nav       nav      nav"
+                "sidebar   main     main"
+                "addvartise     footer      footer"
+                ;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+    <header class="header">
+        <div>
+            <h1>The Header</h1>
+        </div>
+    </header>
+    <nav class="nav"> 
+        <li>
+            <a href="">nav-1</a>
+            <a href="">nav-2</a>
+            <a href="">nav-3</a>
+        </li>
+    </nav>
+    <main class="main">
+       <div>
+        <h3>Main Article Area</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam facilis dolorum quaerat quam veniam culpa fugit accusantium, hic praesentium! Qui?</p>
+       </div>
+    </main>
+    <div class="sidebar">
+        <h4>Sidebar</h4>
+    </div>
+    <div class="addvartise">
+        <h4>Addvartise</h4>
+    </div>
+    <footer class="footer">
+        <h1>The Footer</h1>
+    </footer>
+</body>
+</html>
